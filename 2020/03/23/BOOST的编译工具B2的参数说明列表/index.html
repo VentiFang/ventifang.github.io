@@ -1,0 +1,324 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boost的编译工具B2的参数说明列表 | 旧影如梭</title><meta name="keywords" content="Boost Python"><meta name="author" content="Venti Fang,ventifang@gmail.com"><meta name="copyright" content="Venti Fang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="b2&#x2F;bjam 参数说明：b2 命令的功能强大，用起来也比较复杂，因此在使用之前，最好先查看一下该命令的帮助： b2.exe –help以下是一些比较重要的参数说明： stage&#x2F;install： stage 表示只生成库（dll 和 lib），install 还会生成包含头文件的 include 目录。推荐使用 stage，因为 install 生成的 include 目录实际就是源码包下的 b">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Boost的编译工具B2的参数说明列表">
+<meta property="og:url" content="https://tingguoguo.cn/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/index.html">
+<meta property="og:site_name" content="旧影如梭">
+<meta property="og:description" content="b2&#x2F;bjam 参数说明：b2 命令的功能强大，用起来也比较复杂，因此在使用之前，最好先查看一下该命令的帮助： b2.exe –help以下是一些比较重要的参数说明： stage&#x2F;install： stage 表示只生成库（dll 和 lib），install 还会生成包含头文件的 include 目录。推荐使用 stage，因为 install 生成的 include 目录实际就是源码包下的 b">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://tingguoguo.cn/photos/Boost.jpg">
+<meta property="article:published_time" content="2020-03-23T15:24:00.000Z">
+<meta property="article:modified_time" content="2021-06-03T11:42:07.020Z">
+<meta property="article:author" content="Venti Fang">
+<meta property="article:tag" content="Boost Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://tingguoguo.cn/photos/Boost.jpg"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://tingguoguo.cn/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#1f2d3d","bgDark":"#121212","position":"bottom-left"},
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Boost的编译工具B2的参数说明列表',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-06-03 19:42:07'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    })(window)</script><link rel="stylesheet" href="/self/Kimbiedark.css"><link rel="stylesheet" href="/css/custom.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" src="/img/Cat.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/photos/Boost.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">旧影如梭</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Boost的编译工具B2的参数说明列表</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-03-23T15:24:00.000Z" title="发表于 2020-03-23 23:24:00">2020-03-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-06-03T11:42:07.020Z" title="更新于 2021-06-03 19:42:07">2021-06-03</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Boost/">Boost</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Boost的编译工具B2的参数说明列表"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>b2/bjam 参数说明：<br>b2 命令的功能强大，用起来也比较复杂，因此在使用之前，最好先查看一下该命令的帮助：</p>
+<p>b2.exe –help<br>以下是一些比较重要的参数说明：</p>
+<p>stage/install：</p>
+<p>stage 表示只生成库（dll 和 lib），install 还会生成包含头文件的 include 目录。推荐使用 stage，因为 install 生成的 include 目录实际就是源码包下的 boost 目录，需要 include 的时候可以直接使用，不需要再次生成，这样可以节省大量的编译时间。</p>
+<p>toolset：</p>
+<p>指定编译器，可选的如 borland、gcc、msvc-14.0（VS2015）等。如果不指定，会自动搜索本地可用的编译器（可查看 ./project-config.jam 文件以确认）。</p>
+<p>without/with：</p>
+<p>选择不编译/编译哪些库（类似于黑名单/白名单）。–with-python 的含义是仅编译 python，其他的都不编译。反过来，如果用 –without-python，意思就是除了 python， 其他的都编译。with/without 参数可以多次出现，以限定多个库。如果不设置 with/without 参数，默认全部编译，可能需要几个小时的时间！</p>
+<p>需要注意，编译 Boost.python 需要确保本地安装了 Python，并且 python 命令已加入环境变量。</p>
+<p>要查看 Boost 包含的所有库，可使用以下命令：</p>
+<p>b2.exe –show-libraries<br>stagedir/prefix：</p>
+<p>stage 时使用 stagedir，install 时使用 prefix，表示编译生成文件的路径。推荐给不同的编译环境指定不同的目录，如 Visual Studio 2015 的 x86 应用对应的是 bin/lib32-msvc-14.0，x64 应用对应的是 bin/lib64-msvc-14.0。如果都生成到一个目录下，将没有任何益处，徒增管理难度。如果使用了 install 参数，那么还将在上述指定的目录下生成 include 目录，用于保存头文件。</p>
+<p>build-dir：</p>
+<p>编译生成的中间文件的路径，默认是 Boost 根目录下的 bin.v2 目录，一般无需设置。</p>
+<p>link：</p>
+<p>指定生成动态链接库还是静态链接库，取值为 static|shared。生成静态链接库使用 static，生成动态链接库需使用 shared。如不指定，默认使用 static。静态库的缺点是占用空间比较大，优点是程序发布的时候无需附带 Boost 库的 dll，比较整洁。推荐使用静态库的方式编译 Boost.python，这样发布程序的时候就不用 Boost 的 dll 了，并且也多占用不了太多空间。</p>
+<p>runtime-link：</p>
+<p>指定运行时是动态还是静态链接其他库。同样有 shared 和 static 两种方式。如果不指定，默认是 shared，一般无需设置。</p>
+<p>threading：</p>
+<p>要编译的库是单线程还是多线程，可取值 single|multi。如果不指定，默认是 multi，一般无需设置。</p>
+<p>variant</p>
+<p>debug|release，编译 debug 版本还是 release 版本。一般与最终发布的程序是 debug 还是 release 版相对应。如果不指定，默认两个都编译，一般无需设置。</p>
+<p>address-model</p>
+<p>编译成 32 位版本还是 64 位版本，可取值 32|64。如果不指定，默认两个版本都编译。如果是编译 Boost.python，该参数就要与本地安装的 Python 位数相对应，否则编译会出错，因此最好设置一下。</p>
+<p>Boost 静态库/动态库的命名规则<br>以 Boost.python 为例，如果编译的是静态库（link=static），将会生成单个 .lib 文件：</p>
+<p>libboost_python36-vc140-mt-gd-x32-1_68.lib<br>而如果编译的是动态库（link=shared），将会生成两个文件（.lib 和 .dll）：</p>
+<p>boost_python36-vc140-mt-gd-x32-1_68.lib<br>boost_python36-vc140-mt-gd-x32-1_68.dll<br>动态库虽然也生成 .lib 文件，但它与静态库的 .lib 文件差别很大。动态库的 .lib 更像是对 .dll 的声明，二者的关系类似于 .h 与 .cpp 的关系。因此，动态库中的 .lib 文件要比静态库的 .lib 文件小得多。</p>
+<p>下面以静态库的命名规则为例进行分析：</p>
+<p>libboost_python36-vc140-mt-sgd-x32-1_68.lib<br>| || | | | | | || ||| | | | |</p>
+<p>— —— — — – – – —<br>1 2 3 4 5 6 7 8 9<br>静态库以 lib 开头，动态库开头没有 lib。<br>所有的库都含有 boost 前缀。<br>Boost 库名称，本例中为 python36。<br>编译器名称及其版本，vc140 指的是 msvc-14.0，对应 Visual Studio 2015。<br>有 mt 代表 threading=multi，没有则代表 threading=single。<br>有 s 代表 runtime-link=static，没有则代表 runtime-link=shared。<br>有 gd 代表 debug 版本，没有则代表 release 版本。<br>目标位数，x32 代表 32 位，x64 代表 64 位。<br>Boost 库的版本号，1_68 代表 Boost 1.68 版本。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:ventifang@gmail.com">Venti Fang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://tingguoguo.cn/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/">https://tingguoguo.cn/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://tingguoguo.cn" target="_blank">旧影如梭</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Boost-Python/">Boost Python</a></div><div class="post_share"><div class="social-share" data-image="/photos/Boost.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/03/28/C++%20.h%20.lib%20.dll%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%8C%E9%9D%99%E6%80%81%E8%B0%83%E7%94%A8%E4%B8%8E%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8/"><img class="prev-cover" src="/photos/C++.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用</div></div></a></div><div class="next-post pull-right"><a href="/2020/03/22/Sublime%20Sublime3%E9%85%8D%E7%BD%AEPython3%E8%A7%A3%E9%87%8A%E5%99%A8/"><img class="next-cover" src="/photos/Subline.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Sublime3配置Python3解释器</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Livere</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="lv-container" data-id="city" data-uid="MTAyMC80NTI4NC8yMTc5Nw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-info-avatar is-center"><img class="avatar-img" src="/img/Cat.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Venti Fang</div><div class="author-info__description">奋斗ing ~</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">26</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">30</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">13</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/VentiFang"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/VentiFang" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:ventifang@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">欢迎来到我的小破站 ~</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/03/28/C++%20.h%20.lib%20.dll%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%8C%E9%9D%99%E6%80%81%E8%B0%83%E7%94%A8%E4%B8%8E%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8/" title="C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用"><img src="/photos/C++.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用"/></a><div class="content"><a class="title" href="/2020/03/28/C++%20.h%20.lib%20.dll%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%8C%E9%9D%99%E6%80%81%E8%B0%83%E7%94%A8%E4%B8%8E%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8/" title="C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用">C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用</a><time datetime="2020-03-28T06:11:00.000Z" title="发表于 2020-03-28 14:11:00">2020-03-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/" title="Boost的编译工具B2的参数说明列表"><img src="/photos/Boost.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Boost的编译工具B2的参数说明列表"/></a><div class="content"><a class="title" href="/2020/03/23/BOOST%E7%9A%84%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7B2%E7%9A%84%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E%E5%88%97%E8%A1%A8/" title="Boost的编译工具B2的参数说明列表">Boost的编译工具B2的参数说明列表</a><time datetime="2020-03-23T15:24:00.000Z" title="发表于 2020-03-23 23:24:00">2020-03-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/22/Sublime%20Sublime3%E9%85%8D%E7%BD%AEPython3%E8%A7%A3%E9%87%8A%E5%99%A8/" title="Sublime3配置Python3解释器"><img src="/photos/Subline.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Sublime3配置Python3解释器"/></a><div class="content"><a class="title" href="/2020/03/22/Sublime%20Sublime3%E9%85%8D%E7%BD%AEPython3%E8%A7%A3%E9%87%8A%E5%99%A8/" title="Sublime3配置Python3解释器">Sublime3配置Python3解释器</a><time datetime="2020-03-22T06:11:00.000Z" title="发表于 2020-03-22 14:11:00">2020-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/22/%E7%BD%91%E7%BB%9C%20%E6%B5%85%E6%9E%90PAC%20%E6%95%99%E4%BD%A0%E5%8A%A8%E6%89%8B%E4%BF%AE%E6%94%B9%E4%BD%A0%E7%9A%84PAC%E6%96%87%E4%BB%B6%E5%8F%8Auser-rule%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%90%86/" title="浅谈PAC 叫你动手修改PAC文件以及user-rule文件实现自动代理"><img src="/photos/Network.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="浅谈PAC 叫你动手修改PAC文件以及user-rule文件实现自动代理"/></a><div class="content"><a class="title" href="/2020/03/22/%E7%BD%91%E7%BB%9C%20%E6%B5%85%E6%9E%90PAC%20%E6%95%99%E4%BD%A0%E5%8A%A8%E6%89%8B%E4%BF%AE%E6%94%B9%E4%BD%A0%E7%9A%84PAC%E6%96%87%E4%BB%B6%E5%8F%8Auser-rule%E6%96%87%E4%BB%B6%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E4%BB%A3%E7%90%86/" title="浅谈PAC 叫你动手修改PAC文件以及user-rule文件实现自动代理">浅谈PAC 叫你动手修改PAC文件以及user-rule文件实现自动代理</a><time datetime="2020-03-22T05:54:00.000Z" title="发表于 2020-03-22 13:54:00">2020-03-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/03/10/Python%20Python%E6%96%87%E4%BB%B6.py.pyi.pyc.pyo.pyd%E7%AD%89%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%8C%BA%E5%88%AB/" title="Python文件.py.pyi.pyc.pyo.pyd等各种文件后缀区别（全面汇总）"><img src="/photos/Python.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Python文件.py.pyi.pyc.pyo.pyd等各种文件后缀区别（全面汇总）"/></a><div class="content"><a class="title" href="/2020/03/10/Python%20Python%E6%96%87%E4%BB%B6.py.pyi.pyc.pyo.pyd%E7%AD%89%E5%90%84%E7%A7%8D%E6%96%87%E4%BB%B6%E5%90%8E%E7%BC%80%E5%8C%BA%E5%88%AB/" title="Python文件.py.pyi.pyc.pyo.pyd等各种文件后缀区别（全面汇总）">Python文件.py.pyi.pyc.pyo.pyd等各种文件后缀区别（全面汇总）</a><time datetime="2020-03-10T05:03:00.000Z" title="发表于 2020-03-10 13:03:00">2020-03-10</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2015 - 2021 By Venti Fang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, 欢迎来到我的 <a href="https://tingguoguo.cn/">Blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',preloader.endLoading())</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'P4JXiuIT5nUHo5D5hVPftMdf-9Nh9j0Va',
+      appKey: 'etmWDVboW2SIM8hzaBSB6go2',
+      placeholder: '留个脚印再走？',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: true,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Valine' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="145789047" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/canvas-fluttering-ribbon.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config-diff',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (true) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener toc scroll 
+  window.removeEventListener('scroll', window.tocScrollFn)
+
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body></html>
