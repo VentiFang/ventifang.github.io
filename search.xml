@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>Pycharm vene环境下 pip安装模块失败</title>
+      <link href="2021/09/25/Pycharm%20vene%E7%8E%AF%E5%A2%83%E4%B8%8B%20pip%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E5%A4%B1%E8%B4%A5/"/>
+      <url>2021/09/25/Pycharm%20vene%E7%8E%AF%E5%A2%83%E4%B8%8B%20pip%E5%AE%89%E8%A3%85%E6%A8%A1%E5%9D%97%E5%A4%B1%E8%B4%A5/</url>
+      
+        <content type="html"><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="错误信息"><a href="#错误信息" class="headerlink" title="错误信息"></a>错误信息</h1><p>报错如下:<br>(venv) F:\PythonWorkStation\OpenCV2-Test&gt;pip install ish_parser<br>WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<br>Requirement already satisfied: ish_parser in f:\anaconda3\lib\site-packages (0.0.25)<br>WARNING: pip is configured with locations that require TLS/SSL, however the ssl module in Python is not available.<br>Could not fetch URL <a href="https://pypi.org/simple/pip/">https://pypi.org/simple/pip/</a>: There was a problem confirming the ssl certificate: HTTPSConnectionPool(host=’pypi.org’, port=443): Max retries exceeded with url: /simple/pip/ (Caused by SSLError(“Can’t connect to HTTPS URL becaus<br>e the SSL module is not available.”)) - skipping</p><h1 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h1><p>修改venv文件夹下的 pyvenv.cfg配置文件</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">home = F:\Anaconda3</span><br><span class="line">include-system-site-packages = <span class="literal">false</span> <span class="comment"># false修改为true</span></span><br><span class="line">version = 3.7.6</span><br></pre></td></tr></table></figure><p>原因是ish_parser被激活, 用过SSL执行pip, pip数据被加密传输.</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Pycharm </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Pycharm 配置 </tag>
+            
+            <tag> venv </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>C++ .h .lib .dll文件，静态链接库与动态链接库，静态调用与动态调用</title>
       <link href="2020/03/28/C%20%20.h%20.lib%20.dll%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%8C%E9%9D%99%E6%80%81%E8%B0%83%E7%94%A8%E4%B8%8E%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8/"/>
       <url>2020/03/28/C%20%20.h%20.lib%20.dll%E6%96%87%E4%BB%B6%EF%BC%8C%E9%9D%99%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E4%B8%8E%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%EF%BC%8C%E9%9D%99%E6%80%81%E8%B0%83%E7%94%A8%E4%B8%8E%E5%8A%A8%E6%80%81%E8%B0%83%E7%94%A8/</url>
