@@ -1,4 +1,4 @@
-/**
+<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>/**
  * Created by Lete on 2020/7/7.
  * Butterfly在3.4.0版本后去除了jQuery
  * 注意有使用到jQuery，请自行引入
